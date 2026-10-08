@@ -98,47 +98,25 @@ function ProfileContent() {
 }
 
 interface ProfilePanelProps {
-  mobileOpen: boolean
+  open: boolean
   onClose: () => void
 }
 
-export function ProfilePanel({ mobileOpen, onClose }: ProfilePanelProps) {
+export function ProfilePanel({ open, onClose }: ProfilePanelProps) {
   return (
-    <>
-      <Drawer
-        anchor="right"
-        variant="temporary"
-        open={mobileOpen}
-        onClose={onClose}
-        sx={{
-          display: { xs: 'block', lg: 'none' },
-          '& .MuiDrawer-paper': {
-            width: PROFILE_PANEL_WIDTH,
-            border: 'none',
-          },
-        }}
-      >
-        <ProfileContent />
-      </Drawer>
-      <Drawer
-        anchor="right"
-        variant="permanent"
-        open
-        sx={{
-          display: { xs: 'none', lg: 'block' },
+    <Drawer
+      anchor="right"
+      variant="temporary"
+      open={open}
+      onClose={onClose}
+      sx={{
+        '& .MuiDrawer-paper': {
           width: PROFILE_PANEL_WIDTH,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: PROFILE_PANEL_WIDTH,
-            boxSizing: 'border-box',
-            border: 'none',
-            borderLeft: '1px solid rgba(148,163,184,0.12)',
-            position: 'relative',
-          },
-        }}
-      >
-        <ProfileContent />
-      </Drawer>
-    </>
+          border: 'none',
+        },
+      }}
+    >
+      <ProfileContent />
+    </Drawer>
   )
 }

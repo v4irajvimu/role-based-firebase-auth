@@ -148,6 +148,7 @@ If these are missing, the login page shows a clear setup message instead of cras
 3. **Firestore Database** — create a database (production mode recommended).
 4. Apply the rules in `firestore.rules` (Firebase console or CLI deploy).
 5. Register in the app, then set that user’s `role` to `"admin"` in Firestore to test the admin UI.
+6. **Hosting** — config lives in `firebase.json` / `.firebaserc`. Deploy with `npm run deploy:hosting` after `firebase login`. Confirm Hosting URLs are in Auth authorized domains.
 
 ## Local development
 
@@ -156,4 +157,8 @@ npm install
 npm run dev
 ```
 
-See the root [README](../README.md) for scripts and a short run guide.
+See the root [README](../README.md) for scripts, Hosting deploy, and a short run guide.
+
+## Feature development docs
+
+Per-feature notes live under [docs/features/](features/README.md). Add new feature markdown files there (not only in Cursor plan files).

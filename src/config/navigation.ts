@@ -61,3 +61,12 @@ export function getNavItemsForRole(role: Role): NavItem[] {
 export function getDashboardActionsForRole(role: Role): DashboardAction[] {
   return dashboardActions.filter((action) => action.roles.includes(role))
 }
+
+export function getPageTitle(pathname: string): string {
+  const match = navItems.find((item) =>
+    item.path === '/'
+      ? pathname === '/'
+      : pathname === item.path || pathname.startsWith(`${item.path}/`),
+  )
+  return match?.label ?? 'Portal'
+}
