@@ -1,7 +1,31 @@
 {
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    {
+      "path": "./apps/office-portal-e2e"
+    },
+    {
+      "path": "./apps/office-portal"
+    },
+    {
+      "path": "./libs/office-portal/util"
+    },
+    {
+      "path": "./libs/office-portal/data-access"
+    },
+    {
+      "path": "./libs/office-portal/ui"
+    },
+    {
+      "path": "./libs/office-portal/feature-shell"
+    },
+    {
+      "path": "./libs/office-portal/feature-auth"
+    },
+    {
+      "path": "./libs/office-portal/feature-portal"
+    }
   ]
 }
